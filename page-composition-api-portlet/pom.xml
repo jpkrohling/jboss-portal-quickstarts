@@ -21,10 +21,10 @@
 
     <artifactId>page-composition-api-portlet</artifactId>
     <groupId>org.jboss.quickstarts.portal</groupId>
-    <name>JBoss Portal Quickstart: compose-page-api-portlet</name>
+    <name>Page Composition API Portlet</name>
     <version>6.1.1.build-6-SNAPSHOT</version>
     <packaging>war</packaging>
-    <description>How to use the Page API to compose pages.</description>
+    <description>A Portlet using the Page Composition API to compose Portal Pages.</description>
     <url>http://www.jboss.org</url>
     <licenses>
         <license>
@@ -57,7 +57,6 @@
 
         <version.surefire.plugin>2.10</version.surefire.plugin>
         <version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
-
     </properties>
 
     <dependencyManagement>
@@ -75,16 +74,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-<!--
-            <dependency>
-                <groupId>org.jboss.component.management</groupId>
-                <artifactId>jboss-component-version-master</artifactId>
-                <version>6.0.1-redhat-1</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
--->
         </dependencies>
     </dependencyManagement>
 

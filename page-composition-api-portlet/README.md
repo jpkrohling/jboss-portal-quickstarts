@@ -12,7 +12,7 @@ Source: <https://github.com/jboss-developer/jboss-portal-quickstarts.git>
 What is it?
 -----------
 
-This project demonstrates how to use the Compose Page API, that allows portlet developers to create and update
+This project demonstrates how to use the Page Composition API, that allows portlet developers to create and update
 pages on-demand.
 
 An introduction and some background information to this quickstart can be found in the following chapters

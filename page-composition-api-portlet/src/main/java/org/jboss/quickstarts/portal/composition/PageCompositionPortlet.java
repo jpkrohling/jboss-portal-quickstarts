@@ -14,21 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.quickstarts.portal.composepage;
-
-import org.gatein.api.Portal;
-import org.gatein.api.PortalRequest;
-import org.gatein.api.application.Application;
-import org.gatein.api.application.ApplicationRegistry;
-import org.gatein.api.page.Page;
-import org.gatein.api.composition.PageBuilder;
-import org.gatein.api.page.PageId;
-import org.gatein.api.security.Permission;
+package org.jboss.quickstarts.portal.composition;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.security.SecureRandom;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -36,9 +25,18 @@ import javax.portlet.GenericPortlet;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 
+import org.gatein.api.Portal;
+import org.gatein.api.PortalRequest;
+import org.gatein.api.application.Application;
+import org.gatein.api.application.ApplicationRegistry;
+import org.gatein.api.composition.PageBuilder;
+import org.gatein.api.page.Page;
+import org.gatein.api.page.PageId;
+import org.gatein.api.security.Permission;
+
 /**
- * This is a sample portlet that consumes the Compose Page API. It shows how to query the Application Registry, to
- * get a list of portlets/gadgets, and uses the API to create pages, using some of the applications on the composed
+ * A portlet that consumes the Page Composition API. It shows how to query the Application Registry, to
+ * get a list of portlets and gadgets, and uses the API to create pages, using some of the applications on the composed
  * page.
  *
  * In your application, this code would be in the business layer, which would make a decision on how a page would
@@ -48,7 +46,7 @@ import javax.portlet.RenderResponse;
  *
  * @author Juraci Paixão Kröhling
  */
-public class ComposePageDemoPortlet extends GenericPortlet {
+public class PageCompositionPortlet extends GenericPortlet {
 
     // for this example, we are doing everything inside this portlet's doView, but this would
     // certainly be inside the business layer of your application
@@ -60,12 +58,12 @@ public class ComposePageDemoPortlet extends GenericPortlet {
         // get an instance of the Portal, from which we'll get to the API
         Portal portal = PortalRequest.getInstance().getPortal();
 
-        // example on how to just change a couple properties from an existing page or to create a page without content
+        // example on how to just change a couple of properties of an existing page or to create a page without content
         Page oldPage = portal.createPage(new PageId("classic", "mypage"));
         oldPage.setDisplayName("My Page");
         portal.savePage(oldPage);
 
-        // Gets a list of portlets, gadgets or WSRP from the current portal instance.
+        // Gets a list of portlets, gadgets and WSRP portlets from the current portal instance.
         // Check the API for Application and ApplicationType for more details.
         // Your application could be showing this list on a page to the final user
         // or we could be matching the name of some applications that we would be replacing.
