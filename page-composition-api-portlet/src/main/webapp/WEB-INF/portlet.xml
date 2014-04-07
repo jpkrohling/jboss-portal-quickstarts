@@ -29,7 +29,7 @@
             <mime-type>text/html</mime-type>
         </supports>
         <portlet-info>
-            <title>Compose Page API Demo</title>
+            <title>Page Composition API Demo</title>
         </portlet-info>
     </portlet>
 </portlet-app>

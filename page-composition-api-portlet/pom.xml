@@ -19,7 +19,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>jboss-portal-compose-page-api-portlet</artifactId>
+    <artifactId>page-composition-api-portlet</artifactId>
     <groupId>org.jboss.quickstarts.portal</groupId>
     <name>JBoss Portal Quickstart: compose-page-api-portlet</name>
     <version>6.1.1.build-6-SNAPSHOT</version>
@@ -36,7 +36,7 @@
 
     <properties>
         <!-- JBoss Portal Bill of Materials (BOM) version -->
-        <version.jboss.portal.bom>6.2.0.build-1-SNAPSHOT</version.jboss.portal.bom>
+        <version.jboss.portal.bom>6.3.0.build-1-SNAPSHOT</version.jboss.portal.bom>
 
         <!-- maven-compiler-plugin -->
         <maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>

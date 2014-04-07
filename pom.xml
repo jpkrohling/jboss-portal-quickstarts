@@ -44,9 +44,9 @@
         <module>cdi-jsf-portlet</module>
         <module>cdi-scopes-portlet</module>
         <module>social-portlets</module>
+        <module>page-composition-api-portlet</module>
         <module>portal-extension</module>
         <module>sample-portal</module>
-        <module>compose-page-api-portlet</module>
     </modules>
 
     <properties>
