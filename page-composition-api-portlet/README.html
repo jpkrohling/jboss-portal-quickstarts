@@ -1,26 +1,26 @@
-<!DOCTYPE html><html><head><title>README</title><link href="http://www.jboss.org/jdf/stylesheets/documentation.css" rel="stylesheet"></link><link href="http://www.jboss.org/jdf/stylesheets/pygments.css" rel="stylesheet"></link></head><body><!--~ Do not edit this derived file! See jboss-portal-quickstarts/src/main/freemarker/compose-page-api-portlet/README.html.ftl ~-->
+<!DOCTYPE html><html><head><title>README</title><link href="https://raw.github.com/pmuir/github-flavored-markdown/gh-pages/shared/css/documentation.css" rel="stylesheet"></link><link href="https://raw.github.com/github/github-flavored-markdown/gh-pages/shared/css/pygments.css" rel="stylesheet"></link></head><body><!--~ Do not edit this derived file! See jboss-portal-quickstarts/src/main/freemarker/page-composition-api-portlet/README.html.ftl ~-->
 
-<h1><a id="jbossportalcomposepageapiportlet-jboss-portal-quickstart-composepageapiportlet" class="anchor" href="#jbossportalcomposepageapiportlet-jboss-portal-quickstart-composepageapiportlet"><span class="anchor-icon"></span></a>jboss-portal-compose-page-api-portlet: JBoss Portal Quickstart: compose-page-api-portlet</h1>
+<h1><a id="pagecompositionapiportlet-page-composition-api-portlet" class="anchor" href="#pagecompositionapiportlet-page-composition-api-portlet"><span class="anchor-icon"></span></a>page-composition-api-portlet: Page Composition API Portlet</h1>
 
-<p>Author: Juraci Paixão Kröhling 
+<p>Author: Juraci Paixão Kröhling<br/>
 Level: Intermediate<br/>
 Technologies: Portlet<br/>
-Summary: How to use the Page API to compose pages.<br/>
+Summary: A Portlet using the Page Composition API to compose Portal Pages.<br/>
 Target Product: JBoss Portal<br/>
 Source: <a href="https://github.com/jboss-developer/jboss-portal-quickstarts.git">https://github.com/jboss-developer/jboss-portal-quickstarts.git</a></p>
 
 <h2><a id="what-is-it" class="anchor" href="#what-is-it"><span class="anchor-icon"></span></a>What is it?</h2>
 
 <p>This project demonstrates how to use the Page Composition API, that allows portlet developers to create and update
-pages on-demand.</p>
+Portal pages on-demand.</p>
 
 <p>An introduction and some background information to this quickstart can be found in the following chapters
 of Red Hat JBoss Portal Developer Guide:</p>
 
 <ul>
+<li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/part-Portal_API.html">Portal API</a></li>
 <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/sect-Starting_a_Portlet_Project.html">Starting a Portlet Project</a></li>
 <li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/sect-Standard_Portlet_Development_JSR-286.html">Standard Portlet Development (JSR-286)</a></li>
-<li><a href="https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/part-Portal_API.html">Portal API</a></li>
 </ul>
 
 <!--~ Included from gatein-portal-quickstarts-parent/src/main/freemarker/include/portlet-general.md.ftl ~-->
@@ -125,20 +125,19 @@ operating system and rename it to <code>settings.xml</code>.</p></li>
 <li>Open a command line and navigate to the root directory of this quickstart.</li>
 <li><p>Type this command to build and deploy the archive:</p>
 <div class="highlight"><pre><span class="n">mvn</span> <span class="n">clean</span> <span class="n">package</span> <span class="n">jboss</span><span class="o">-</span><span class="n">as</span><span class="o">:</span><span class="n">deploy</span>
-</pre></div></li>
-</ol>
-
-<p>To deploy to other than default localhost:9999 JBoss instance, copy the following configuration
-   just after <code>&lt;artifactId&gt;jboss-as-maven-plugin&lt;/artifactId&gt;</code> in the pom.xml file and adjust it to suit your needs.
-   <code>username</code> and <code>password</code> elements can be omitted sometimes, depending on your JBoss security settings.</p>
-<div class="highlight"><pre>    <span class="nt">&lt;configuration&gt;</span>
-        <span class="nt">&lt;hostname&gt;</span>127.0.0.1<span class="nt">&lt;/hostname&gt;</span>
-        <span class="nt">&lt;port&gt;</span>9999<span class="nt">&lt;/port&gt;</span>
-        <span class="nt">&lt;username&gt;</span>admin<span class="nt">&lt;/username&gt;</span>
-        <span class="nt">&lt;password&gt;</span>secret<span class="nt">&lt;/password&gt;</span>
-    <span class="nt">&lt;/configuration&gt;</span>
 </pre></div>
-<p>This will deploy <code>target/jboss-portal-compose-page-api-portlet.war</code> to the running instance of the portal.</p>
+<p>To deploy to other than default localhost:9999 JBoss instance, copy the following configuration
+just after <code>&lt;artifactId&gt;jboss-as-maven-plugin&lt;/artifactId&gt;</code> in the pom.xml file and adjust it to suit your needs.
+<code>username</code> and <code>password</code> elements can be omitted sometimes, depending on your JBoss security settings.</p>
+<div class="highlight"><pre><span class="nt">&lt;configuration&gt;</span>
+    <span class="nt">&lt;hostname&gt;</span>127.0.0.1<span class="nt">&lt;/hostname&gt;</span>
+    <span class="nt">&lt;port&gt;</span>9999<span class="nt">&lt;/port&gt;</span>
+    <span class="nt">&lt;username&gt;</span>admin<span class="nt">&lt;/username&gt;</span>
+    <span class="nt">&lt;password&gt;</span>secret<span class="nt">&lt;/password&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre></div>
+<p>This will deploy <code>target/page-composition-api-portlet.war</code> to the running instance of the portal.</p></li>
+</ol>
 
 <h2><a id="access-the-deployed-portlet" class="anchor" href="#access-the-deployed-portlet"><span class="anchor-icon"></span></a>Access the deployed Portlet</h2>
 
@@ -149,7 +148,7 @@ operating system and rename it to <code>settings.xml</code>.</p></li>
 <a href="http://127.0.0.1:8080/portal/classic">http://127.0.0.1:8080/portal/classic</a>).</li>
 <li>Sign in as root or other user with manager:/platform/administrators permissions.</li>
 <li>Go to Top Menu &gt; Group &gt; Administration &gt; Application Registry and hit Import Applications. After that, you should
-see the newly imported JBoss Portal Quickstart: compose-page-api-portlet under the Quickstarts Category.</li>
+see the newly imported Page Composition API Portlet under the Quickstarts Category.</li>
 <li>Then you can add the example portlet to a page of your choice: either (a) to a new page or (b) to an existing page.
 
 <ul>
@@ -160,19 +159,19 @@ see the newly imported JBoss Portal Quickstart: compose-page-api-portlet under t
 <li>In the Page Creation Wizard, fill in:
 
 <ul>
-<li>Node Name: jboss-portal-compose-page-api-portlet</li>
-<li>Display Name: JBoss Portal Quickstart: compose-page-api-portlet</li>
+<li>Node Name: page-composition-api-portlet</li>
+<li>Display Name: Page Composition API Portlet</li>
 </ul></li>
 <li>Click Next</li>
 <li>Leave Empty Layout as it is and hit Next</li>
-<li>Drag-and-Drop JBoss Portal Quickstart: compose-page-api-portlet from the Page Editor dialog to the middle of the Page Creation Wizard</li>
+<li>Drag-and-Drop Page Composition API Portlet from the Page Editor dialog to the middle of the Page Creation Wizard</li>
 <li>Click the Diskette-like Finish button in the header of the Page Editor dialog and see the newly added portlet in action.</li>
 </ul></li>
 <li>If you have chosen (b) to add the portlet to an existing page:
 
 <ul>
 <li>Navigate to the page where you want to add the portlet and go to Top Menu &gt; Group Editor &gt; Edit Page</li>
-<li>Drag-and-Drop JBoss Portal Quickstart: compose-page-api-portlet from the Page Editor dialog to a place of your choice within the page.</li>
+<li>Drag-and-Drop Page Composition API Portlet from the Page Editor dialog to a place of your choice within the page.</li>
 <li>Click the Diskette-like Finish button in the header of the Page Editor dialog and see the newly added portlet in action.</li>
 </ul></li>
 </ul></li>

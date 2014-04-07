@@ -1,11 +1,11 @@
-<!--~ Do not edit this derived file! See jboss-portal-quickstarts/src/main/freemarker/compose-page-api-portlet/README.md.ftl ~-->
+<!--~ Do not edit this derived file! See jboss-portal-quickstarts/src/main/freemarker/page-composition-api-portlet/README.md.ftl ~-->
 
-jboss-portal-compose-page-api-portlet: JBoss Portal Quickstart: compose-page-api-portlet
+page-composition-api-portlet: Page Composition API Portlet
 ============================
-Author: Juraci Paixão Kröhling 
+Author: Juraci Paixão Kröhling  
 Level: Intermediate  
 Technologies: Portlet  
-Summary: How to use the Page API to compose pages.  
+Summary: A Portlet using the Page Composition API to compose Portal Pages.  
 Target Product: JBoss Portal  
 Source: <https://github.com/jboss-developer/jboss-portal-quickstarts.git>
 
@@ -13,14 +13,14 @@ What is it?
 -----------
 
 This project demonstrates how to use the Page Composition API, that allows portlet developers to create and update
-pages on-demand.
+Portal pages on-demand.
 
 An introduction and some background information to this quickstart can be found in the following chapters
 of Red Hat JBoss Portal Developer Guide:
 
+* [Portal API](https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/part-Portal_API.html)
 * [Starting a Portlet Project](https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/sect-Starting_a_Portlet_Project.html)
 * [Standard Portlet Development (JSR-286)](https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/sect-Standard_Portlet_Development_JSR-286.html)
-* [Portal API](https://access.redhat.com/site/documentation/en-US/JBoss_Portal_Platform/6.1/html/Development_Guide/part-Portal_API.html)
 
 <!--~ Included from gatein-portal-quickstarts-parent/src/main/freemarker/include/portlet-general.md.ftl ~-->
 <!--~ Included from gatein-portal-quickstarts-parent/src/main/freemarker/include/system-requirements.md.ftl ~-->
@@ -126,7 +126,7 @@ Build and Deploy the Quickstart
             <password>secret</password>
         </configuration>
 
-   This will deploy `target/jboss-portal-compose-page-api-portlet.war` to the running instance of the portal.
+   This will deploy `target/page-composition-api-portlet.war` to the running instance of the portal.
 
 
 Access the deployed Portlet
@@ -138,20 +138,20 @@ To ensure that the example portlet has been deployed successfully, do the follow
 [http://127.0.0.1:8080/portal/classic](http://127.0.0.1:8080/portal/classic)).
 * Sign in as root or other user with manager:/platform/administrators permissions.
 * Go to Top Menu > Group > Administration > Application Registry and hit Import Applications. After that, you should
-see the newly imported JBoss Portal Quickstart: compose-page-api-portlet under the Quickstarts Category.
+see the newly imported Page Composition API Portlet under the Quickstarts Category.
 * Then you can add the example portlet to a page of your choice: either (a) to a new page or (b) to an existing page.
     * If you have chosen (a) to add the portlet to a new page:
         * Go to Top Menu > Group Editor > Add New Page
         * In the Page Creation Wizard, fill in:
-            * Node Name: jboss-portal-compose-page-api-portlet
-            * Display Name: JBoss Portal Quickstart: compose-page-api-portlet
+            * Node Name: page-composition-api-portlet
+            * Display Name: Page Composition API Portlet
         * Click Next
         * Leave Empty Layout as it is and hit Next
-        * Drag-and-Drop JBoss Portal Quickstart: compose-page-api-portlet from the Page Editor dialog to the middle of the Page Creation Wizard
+        * Drag-and-Drop Page Composition API Portlet from the Page Editor dialog to the middle of the Page Creation Wizard
         * Click the Diskette-like Finish button in the header of the Page Editor dialog and see the newly added portlet in action.
     * If you have chosen (b) to add the portlet to an existing page:
         * Navigate to the page where you want to add the portlet and go to Top Menu > Group Editor > Edit Page
-        * Drag-and-Drop JBoss Portal Quickstart: compose-page-api-portlet from the Page Editor dialog to a place of your choice within the page.
+        * Drag-and-Drop Page Composition API Portlet from the Page Editor dialog to a place of your choice within the page.
         * Click the Diskette-like Finish button in the header of the Page Editor dialog and see the newly added portlet in action.
 
 
