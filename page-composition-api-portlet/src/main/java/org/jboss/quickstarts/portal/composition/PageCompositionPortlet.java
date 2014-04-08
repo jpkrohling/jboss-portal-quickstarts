@@ -30,6 +30,10 @@ import org.gatein.api.PortalRequest;
 import org.gatein.api.application.Application;
 import org.gatein.api.application.ApplicationRegistry;
 import org.gatein.api.composition.PageBuilder;
+import org.gatein.api.navigation.Navigation;
+import org.gatein.api.navigation.Node;
+import org.gatein.api.navigation.NodePath;
+import org.gatein.api.navigation.Nodes;
 import org.gatein.api.page.Page;
 import org.gatein.api.page.PageId;
 import org.gatein.api.security.Permission;
@@ -59,7 +63,7 @@ public class PageCompositionPortlet extends GenericPortlet {
         Portal portal = PortalRequest.getInstance().getPortal();
 
         // example on how to just change a couple of properties of an existing page or to create a page without content
-        Page oldPage = portal.createPage(new PageId("classic", "mypage"));
+        Page oldPage = portal.createPage(new PageId("classic", "mypage" + UUID.randomUUID().toString()));
         oldPage.setDisplayName("My Page");
         portal.savePage(oldPage);
 
@@ -91,6 +95,8 @@ public class PageCompositionPortlet extends GenericPortlet {
         // Gets a new page builder from the main API.
         PageBuilder pageBuilder = portal.newPageBuilder();
 
+        String pageIdentifierName = "awesome_" + UUID.randomUUID().toString();
+
         // And now, we compose the page.
         Page page = pageBuilder
                 .newRowsBuilder() // we three rows
@@ -116,7 +122,7 @@ public class PageCompositionPortlet extends GenericPortlet {
                 .buildToTopBuilder()
                 .siteName("classic") // to which site should this page belong to?
                 .siteType("portal")
-                .name("awesome_" + UUID.randomUUID().toString()) // what would be the short name of the page?
+                .name(pageIdentifierName) // what would be the short name of the page?
                 .displayName("Awesome page") // and how should be the display name?
                 .showMaxWindow(false) // should we show the "maximize window" option?
                 .accessPermission(Permission.everyone()) // the permissions that we've specified earlier
@@ -127,12 +133,15 @@ public class PageCompositionPortlet extends GenericPortlet {
 
         portal.savePage(page); // and finally, persist the page!
 
-        // in some situations, your application might know already the ID of the page that it wants to change
-        // if that's the case, then you can just call the getPage, passing the page ID.
-        Page pageFromStorage = portal.getPage(page.getId());
+        // A page needs to be associated with a node, so that it gets an URL which is accessible to visitors
+        Navigation navigation = PortalRequest.getInstance().getNavigation();
+        Node home = navigation.getNode(NodePath.path("home"), Nodes.visitChildren());
+        Node awesomePage = home.addChild(pageIdentifierName);
+        awesomePage.setPageId(page.getId());
+        navigation.saveNode(awesomePage);
 
         // end of the quick start
-        writer.write("Created!");
+        writer.write("Created! The page is available <a href=\""+awesomePage.getURI()+"\">here</a> ");
         writer.close();
     }
 }
